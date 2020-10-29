@@ -2,6 +2,7 @@ $(document).ready(function() {
   $("#wordplay").submit(function(event) {
     event.preventDefault();
 
+    $(".output").show();
     let userInput = $("input#sentence").val();
     let threeList = [];
     let notThree = [];
@@ -13,13 +14,13 @@ $(document).ready(function() {
         notThree.push(element);
       }
     });
-    console.log(threeList);
-    let results = threeList.join(" ");
-    console.log(results);
 
+    let reverse = threeList.reverse();
+    let final = reverse.join(" ");
     
-     $(".output").show();
-     $(".output").text(results);
+    //let results = threeList.join(" ");
+
+     $("p").text(final);
     
   });
 });
