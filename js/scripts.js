@@ -4,21 +4,22 @@ $(document).ready(function() {
 
     let userInput = $("input#sentence").val();
     let threeList = [];
+    let notThree = [];
     let sentence = userInput.split(" ");
     sentence.forEach(function(element) {
-      threeList.push(element = element.length > 3);
+      if (element.length > 3) {
+        threeList.push(element)
+      } else {
+        notThree.push(element);
+      }
     });
     console.log(threeList);
-    
-    
-    
+    let results = threeList.join(" ");
+    console.log(results);
 
-    const results = [];
-
-    array.push(userInput);
     
-  
-     $("output").show()
+     $(".output").show();
+     $(".output").text(results);
     
   });
 });
